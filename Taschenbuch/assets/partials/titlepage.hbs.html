@@ -1,0 +1,18 @@
+<div id="title_page">
+    {{#if metadata.editors}}
+        <div class="title_page_editors">
+            <span>Edited by</span><br>
+            <div>
+                {{#each metadata.editors}}
+                    {{#if Person}}
+                        <span class="title_page_editor">{{Person.first_names}} {{Person.last_names}}</span>{{/if}}
+                    {{#if NameString}}<span class="title_page_editor">{{NameString}}</span>{{/if}}
+                {{/each}}
+            </div>
+        </div>
+    {{/if}}
+    <span class="title_page_title">{{{metadata.title}}}</span><br>
+    {{#if metadata.subtitle}}
+        <span class="title_page_subtitle">{{metadata.subtitle}}</span>
+    {{/if}}
+</div>

@@ -1,0 +1,94 @@
+.toc-link-inner{
+    display: inline-block;
+}
+.toc-section-authors:not(:first-of-type)::before{
+    content: ",  ";
+    margin-left: 1px;
+}
+.toc-section-authors:last-of-type::before {
+    content: " & ";
+    margin-left: 3px;
+}
+.toc-section-authors:first-of-type:last-of-type::before{
+    content: "";
+}
+.toc ul{
+    margin-left: 0;
+    list-style: none;
+    padding: 0;
+}
+
+.toc li{
+    margin-left: 0;
+}
+.title_page_title{
+    display: block;
+    margin-top: 1.5cm;
+    font-size: 18pt;
+    font-family: Antonio;
+}
+
+.toc{
+    margin-top: 1cm;
+    font-size: 12pt;
+}
+.toc a{
+    color: black;
+}
+.toc-link{
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-top: 0.2cm;
+}
+.toc-link-number{
+    width: 2cm;
+    text-align: right;
+    font-size: 8pt;
+    font-family: Antonio;
+}
+.toc-link-number::after{
+    content: target-counter(attr(href, url), page);
+}
+
+#beforetoc{
+    break-before: left;
+}
+#toc{
+    break-before: right;
+}
+.toc-section-authors{
+    display: inline;
+    font-style: italic;
+    font-size: 8pt;
+}
+.toc-foreword{
+    font-size: 9pt;
+    hyphens: manual;
+    word-break: normal;
+}
+.toc-part-with-first-chapter{
+    break-inside: avoid;
+}
+.toc-part-title{
+    display: block;
+    margin-top: 0.5cm;
+    font-size: 1rem;
+    font-family: Antonio;
+    hyphens: manual;
+    word-break: normal;
+}
+.toc-section-title{
+    display: block;
+    font-size: 9pt;
+    hyphens: manual;
+    word-break: normal;
+    line-height: 1.2;
+}
+.toc-part-link{
+    border-bottom: 1px solid black;
+}
+.toc-authors-div{
+    line-height: 1;
+    margin-bottom: 0.2em;
+}

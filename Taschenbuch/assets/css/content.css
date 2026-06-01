@@ -1,0 +1,89 @@
+.chapter > p + p{
+    text-indent: 20px;
+}
+
+.chapter_titlepage_author{
+    font-style: italic;
+}
+.chapter_titlepage_author:not(:first-of-type)::before {
+    content: ",  ";
+    margin-left: -2px;
+}
+.chapter_titlepage_author:last-of-type::before {
+    content: "  & ";
+    margin-left: 1px;
+}
+
+.chapter_titlepage_author:first-of-type:last-of-type::before {
+    content: "";
+}
+
+.chapter{
+    hyphens: manual;
+    /* text-align: justify;
+    text-align-last: left;*/
+    /*text-wrap: pretty;*/
+    page: Footer;
+}
+
+.chapter p{
+    text-align: justify;
+    text-align-last: left;
+}
+
+.inbetween-chapters{
+    break-before: left;
+    border: 1px solid red;
+}
+.chapter_titlepage{
+    break-before: right;
+    break-after: right;
+    text-align: center;
+}
+.chapter_titlepage_inner{
+    margin-top: 2cm;
+    width: 100%; /* Sorgt für eine volle Breite innerhalb des übergeordneten Containers */
+}
+.chapter_titlepage h1{
+    margin-top: 1cm;
+    font-size: 1.75rem;
+    text-align: center !important;
+    hyphens: none !important;
+}
+.chapter_titlepage_subtitle{
+    font-style: italic;
+    display: block;
+    height: 2cm;
+    hyphens: none !important;
+}
+.part_titlepage{
+    break-before: right;
+    break-after: right;
+    text-align: center;
+    font-family: Antonio;
+    font-size: 1.5rem;
+}
+.part_titlepage_inner{
+    margin-top: 2cm;
+    padding-top: 0.5cm;
+    padding-left: 0.25cm;
+    padding-bottom: 0.5cm;
+    padding-right: 0.25cm;
+    border-top: 1px double black;
+    border-bottom: 1px double black;
+    hyphens: none !important;
+}
+
+.chapter_titlepage .qrcode_link {
+    display: block;
+    position: absolute;
+    bottom: 1.5cm; /* Abstand vom unteren Rand */
+    left: 50%; /* Setzt den Startpunkt zur Hälfte des Containers */
+    transform: translateX(-50%) rotate(45deg); /* Verschiebt den QR-Code zurück um seine halbe Breite, um ihn zu zentrieren */
+    width: 100px; /* Definiert eine feste Breite */
+    height: 100px; /* Definiert eine feste Höhe */
+}
+.chapter_titlepage .qrcode_link svg{
+    width: 100%;
+    height: auto;
+}

@@ -1,0 +1,12 @@
+#metadata_page{
+    page-break-after: always;
+}
+#metadata_page p{
+    margin-bottom: 1rem;
+    font-size: 7pt;
+    line-height: 1rem;
+}
+#metadata_page_inner{
+    position: absolute;
+    bottom: 0;
+}

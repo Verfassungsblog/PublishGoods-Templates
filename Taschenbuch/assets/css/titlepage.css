@@ -1,0 +1,37 @@
+#title_page{
+    break-before: right;
+    page-break-after: always;
+    text-align: center;
+}
+#title_page{
+    margin-top: 2cm;
+    font-size: 8pt;
+}
+.title_page_editor:not(:first-of-type)::before {
+    content: ", ";
+}
+
+.title_page_editor:last-of-type::before {
+    content: "  & ";
+    margin-left: 1px;
+}
+
+.title_page_editor:first-of-type:last-of-type::before {
+    content: "";
+}
+
+
+.title_page_subtitle{
+    position: relative;
+    font-size: 1.15rem;
+    
+}
+.title_page_logo{
+    width: 5cm;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    bottom:0;
+}

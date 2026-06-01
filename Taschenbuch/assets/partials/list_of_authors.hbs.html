@@ -1,0 +1,16 @@
+<div id="list_of_authors">
+    <h1>Contributing Authors</h1>
+    {{#each metadata.authors}}
+        <div class="authors_block">
+            {{#if Person}}
+                <p class="authors_block_name">{{Person.first_names}} {{Person.last_names}}</p>
+                {{#each Person.bios}}
+                    <p class="authors_block_bio">{{content}}</p>
+                {{/each}}
+            {{/if}}
+            {{#if NameString}}
+                <p class="authors_block_name">{{NameString}}</p>
+            {{/if}}
+        </div>
+    {{/each}}
+</div>

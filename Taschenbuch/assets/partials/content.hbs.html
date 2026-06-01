@@ -1,0 +1,43 @@
+  {{#each sections}}
+            <div class="chapter_titlepage">
+            <span class="running_title"></span>
+            <span class="running_authors"></span>
+                <div class="chapter_titlepage_inner" id="{{id}}">
+                    {{#if metadata.authors}}
+                        {{#each metadata.authors}}
+                            {{#if Person}}<span class="chapter_titlepage_author">{{Person.first_names}} {{Person.last_names}}</span>{{/if}}
+                            {{#if NameString}}<span class="chapter_titlepage_author">{{NameString}}</span>{{/if}}
+                        {{/each}}
+                    {{/if}}
+                    <h1>{{{metadata.title}}}</h1>
+                    {{#if metadata.subtitle}}<span class="chapter_titlepage_subtitle">{{{metadata.subtitle}}}</span>{{/if}}
+                    {{#if metadata.web_url}}
+                        <span class="chapterpage_qrcode"><a class="qrcode_link" href="{{metadata.web_url}}">{{qrcode metadata.web_url}}</a></span>
+                    {{/if}}
+                </div>
+            </div>
+
+            <div class="chapter">
+                <span class="running_title">{{metadata.title}}</span>
+                <span class="running_authors">
+                    {{#each metadata.authors}}
+                        {{#if Person}}<span class="chapter_titlepage_author">{{Person.first_names}} {{Person.last_names}}</span>{{/if}}
+                        {{#if NameString}}<span class="chapter_titlepage_author">{{NameString}}</span>{{/if}}
+                    {{/each}}
+                </span>
+                {{#each children}}
+                    {{initial_letter html "PTSerif"}}
+                {{/each}}
+
+                {{#if endnotes}}
+                    <div class="endnotes">
+                        <h1>References</h1>
+                        <ol>
+                            {{#each endnotes}}
+                                <li id="note-{{id}}" class="endnotes-note">{{{content}}}</li>
+                            {{/each}}
+                        </ol>
+                    </div>
+                {{/if}}
+            </div>
+{{/each}}

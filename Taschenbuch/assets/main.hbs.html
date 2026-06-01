@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="global_assets/css/main.css">
+    <link rel="stylesheet" href="global_assets/css/content.css">
+    <link rel="stylesheet" href="global_assets/css/table_of_content.css">
+    <link rel="stylesheet" href="global_assets/css/list_of_authors.css">
+    <link rel="stylesheet" href="global_assets/css/metadata.css">
+    <link rel="stylesheet" href="global_assets/css/titlepage.css">
+</head>
+<body>
+<!-- Cover -->
+{{#if settings.cover_image_path}}
+<div class="cover">
+  <img src="uploads/{{settings.cover_image_path}}" style="width: 100%; height: 100%">
+</div>
+{{/if}}  
+  
+<!-- Metadata Page -->
+{{> global_assets/partials/metadata}}
+
+<!-- Titlepage -->
+{{> global_assets/partials/titlepage}}
+
+<!-- List of authors -->
+{{> global_assets/partials/list_of_authors}}
+
+<!-- TOC -->
+{{> global_assets/partials/table_of_contents}}
+
+<!-- Content -->
+{{> global_assets/partials/content}}
+
+<!-- BackCover -->
+{{#if settings.backcover_image_path}}
+<div class="backcover">
+  <img src="uploads/{{settings.backcover_image_path}}" style="width: 100%; height: 100%">
+</div>
+{{/if}}  
+</body>
+</html>

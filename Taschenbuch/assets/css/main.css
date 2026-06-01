@@ -1,0 +1,265 @@
+@font-face {
+    font-family: "PT Serif";
+    src: url('../fonts/PTSerif-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: "PT Serif";
+    src: url('../fonts/PTSerif-Bold.ttf') format('truetype');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: "PT Serif";
+    src: url('../fonts/PTSerif-Italic.ttf') format('truetype');
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "PT Serif";
+    src: url('../fonts/PTSerif-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face{
+    font-family: "AntonioLight";
+    src: url('../fonts/Antonio-Light.ttf') format('truetype');
+}
+
+@font-face{
+    font-family: "Antonio";
+    src: url('../fonts/Antonio-Regular.ttf') format('truetype');
+}
+
+@font-face{
+    font-family: "Antonio";
+    src: url('../fonts/Antonio-Bold.ttf') format('truetype');
+    font-weight: bold;
+}
+
+html{
+    font-family: "PT Serif";
+    font-size: 9pt;
+}
+
+body{
+    page: NoFooter;
+}
+
+
+p {
+    font-size: 1.0rem;
+    line-height: 1.5rem;
+    margin-bottom: 0;
+    margin-top: 0;
+    padding: 0;
+}
+
+a {
+    color: #686868;
+    text-decoration: none;
+}
+
+@page {
+    counter-reset: footnote 0;
+    size: 12.5cm 19cm;
+    margin: 1.8cm 1.5cm 2.5cm;
+    counter-increment: page;
+}
+
+@page {
+    @footnote {
+        border-top: dashed red 1px;
+    }
+}
+
+@page:left {
+    @bottom-left {
+        content: counter(page);
+        font-size: 8pt;
+        font-family: Antonio;
+    }
+    @top-center {
+        content: element(header1);
+    }
+}
+
+@page:right {
+    @bottom-right {
+        content: counter(page);
+        font-size: 8pt;
+        font-family:Antonio;
+    }
+    @top-center {
+        content: element(header2);
+    }
+}
+@page :blank{
+    @bottom-center {
+        content: "";
+    }
+    @bottom-left {
+        content: "";
+    }
+    @bottom-right {
+        content: "";
+    }
+    @top-center {
+        content: "";
+    }
+}
+
+@page Footer{
+}
+
+@page NoFooter {
+    @bottom-center {
+        content: "";
+    }
+    @bottom-left {
+        content: "";
+    }
+    @bottom-right {
+        content: "";
+    }
+}
+
+@page Borderless{
+margin: 0!important;
+padding: 0!important;
+}
+
+@page Borderless {
+    @bottom-center {
+        content: "";
+    }
+    @bottom-left {
+        content: "";
+    }
+    @bottom-right {
+        content: "";
+    }
+}
+
+:root {
+    counter-reset: footnote;
+}
+.footnote {
+    counter-increment: footnote;
+    float: footnote;
+}
+.footnote-marker::before,
+.footnote-call::before {
+    content: counter(footnote);
+}
+
+h1{
+    font-family: AntonioLight;
+    font-size: 1.3rem;
+    font-weight: normal;
+    text-align: left;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    line-height: 2.5rem;
+    text-align: left !important;
+}
+h2{
+    font-style: italic;
+    text-align: left !important;
+    font-size: 0.5rem;
+    font-weight: normal;
+    margin-bottom: 0rem;
+    margin-top: 1rem;
+}
+h3{
+    font-size: 5pt;
+}
+
+img{
+max-width: 100%;
+height: auto;
+}
+.acknowledgement{
+    font-size: 9pt;
+    text-align: justify;
+    text-align-last: right;
+    font-style: italic;
+}
+.endnotes{
+    break-inside: avoid;
+    font-size: 0.8rem;
+    line-height: 1.2;
+}
+.endnotes > ol{
+    padding-left: 0;
+}
+sup{
+    font-size: 0.7rem;
+    vertical-align: top;
+    position: relative;
+    top: -0.5em;
+}
+
+.endnotes-note{
+    margin-bottom: 0.5rem;
+    break-inside: avoid;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+blockquote{
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+    margin-left: 1em;
+    margin-right: 1em;
+    font-style: italic;
+    padding: 0;
+}
+blockquote footer{
+    font-style: normal;
+}
+.running_title{
+    position: running(header1);
+    font-size: 0.6rem;
+    font-style: italic;
+    display: block;
+    
+}
+.running_authors{
+    position: running(header2);
+    font-size: 0.6rem;
+    font-style: italic;
+    display: block;
+}
+
+.initial-letter{
+ height: 3rem;
+}
+.initial-letter > svg{
+ height: 3.1rem;
+ width: auto;
+}
+    
+.nobreak{
+    hyphens: none !important;
+}
+
+.rechtsbündig {
+    text-align: right !important;
+}
+
+.cover{
+page: Borderless;
+page-break-after: always;
+padding: 0 !important;
+margin: 0 !important;
+width: 100% !important;
+height: 100% !important;
+}
+.backcover{
+page: Borderless;
+padding: 0 !important;
+margin: 0 !important;
+width: 100% !important;
+height: 100% !important;
+}

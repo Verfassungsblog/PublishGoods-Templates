@@ -1,0 +1,16 @@
+#list_of_authors{
+    break-before: right;
+}
+.authors_block{
+    margin-bottom: 10px;
+    break-inside: avoid;
+}
+.authors_block_name{
+    font-style: italic;
+    font-size: 0.9rem;
+}
+.authors_block_bio{
+    text-align: justify;
+    font-size: 0.8rem;
+    line-height: 1rem;
+}

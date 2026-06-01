@@ -1,0 +1,25 @@
+<nav id="toc" role="doc-toc" class="toc">
+        <h1>Content</h1>
+        <ul>
+            {{#each ../sections}}
+            <li>
+                        <a href="#{{id}}" class="toc-link toc-section-link">
+                            <div class="toc-link-inner">
+                                {{#if metadata.authors}}
+                                    <div class="toc-authors-div">
+                                        {{#each metadata.authors}}
+                                            {{#if Person}}<span class="toc-section-authors">{{Person.first_names}} {{Person.last_names}}</span>{{/if}}
+                                            {{#if NameString}}<span class="toc-section-authors">{{NameString}}</span>{{/if}}
+                                        {{/each}}
+                                    </div>
+                                {{/if}}
+                                <span class="toc-section-title">
+                                    {{#if metadata.toc_title_subtitle_override}}{{{metadata.toc_title_subtitle_override}}}{{else}}{{{metadata.title}}}{{#if metadata.subtitle}}: {{{metadata.subtitle}}}{{/if}}{{/if}}
+                                </span>
+                            </div>
+                            <div class="toc-link-number" href="#{{id}}"></div>
+                        </a>
+            </li>
+            {{/each}}
+    </ul>
+    </nav>
